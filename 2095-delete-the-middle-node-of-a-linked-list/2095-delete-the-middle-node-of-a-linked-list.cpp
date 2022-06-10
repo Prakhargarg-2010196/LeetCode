@@ -23,7 +23,6 @@ public:
             fast=fast->next->next;
             
         }
-        cout<<slow->val<<"";
         temp2=slow->next;
         while(temp->next!=slow)
         {   
@@ -32,7 +31,7 @@ public:
         }
         
           temp->next=temp2;
-      
+            
       
         return head;
     }
