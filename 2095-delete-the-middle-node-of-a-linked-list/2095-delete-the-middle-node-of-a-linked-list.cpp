@@ -30,7 +30,7 @@ public:
         }
         
           temp->next=temp2;
-            
+          delete slow;
       
         return head;
     }
