@@ -27,7 +27,6 @@ public:
         while(temp->next!=slow)
         {   
             temp=temp->next;
-            // cout<<temp->val<<" ";
         }
         
           temp->next=temp2;
