@@ -15,19 +15,27 @@ public:
         /*FirstPointer is moved n spaces away from the other pointer so that when it               reaches the end the SecondPointer reaches the nth node from the end                       automatically
         */ 
      ListNode* SecondPointer=head;
-     ListNode* Dummy=NULL;
+    
      for(int i=0;i<n;i++)
        FirstPointer=FirstPointer->next;
      if(FirstPointer==NULL)
-         return head->next;
-     while(FirstPointer->next!=NULL)
+     {
+         ListNode* Dummy=head;
+         head=head->next;
+         delete(Dummy);
+         return head;
+     
+     }
+         while(FirstPointer->next!=NULL)
      {
          FirstPointer=FirstPointer->next;
          SecondPointer=SecondPointer->next;
      }
-        Dummy=SecondPointer->next;
+       ListNode* Dummy=SecondPointer->next;
+        cout<<Dummy->val<<endl;
         SecondPointer->next=SecondPointer->next->next;
         delete(Dummy);
+                
         return head;
     }
 };
