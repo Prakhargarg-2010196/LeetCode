@@ -21,12 +21,12 @@ step 2: Check if the value of one map to the other map if both map to each other
                 return false;
             
         }
-        cout<<"mst"<<endl;  
-        for(auto&it :map_st)
-            cout<<it.first<<" "<<it.second<<endl;
-        cout<<"mts"<<endl;    
-        for(auto&it :map_ts)
-            cout<<it.first<<" "<<it.second<<endl;
+        // cout<<"mst"<<endl;  
+        // for(auto&it :map_st)
+        //     cout<<it.first<<" "<<it.second<<endl;
+        // cout<<"mts"<<endl;    
+        // for(auto&it :map_ts)
+        //     cout<<it.first<<" "<<it.second<<endl;
             return true;
     }
 };
