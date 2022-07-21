@@ -1,7 +1,7 @@
 #include <algorithm>
 class Solution {
 public:
-    int withoutStackApproach(string s)
+    int withoutStackApproach(string &s)
     {
         // ignore numbers and symbols
         // take one counter variable(count) for opening parenthesis
@@ -20,7 +20,7 @@ public:
      }
         return maxCount;
     }
-    int stackApproach(string s)
+    int stackApproach(string &s)
     {   stack<char> stk;
         int maxOpeningParenthesis=0;
         //As the goal is to calculate number of opening parenthesis.
@@ -40,7 +40,7 @@ public:
     }
     int maxDepth(string s) {
      
-    return stackApproach(s);
-        
+    // return stackApproach(s);
+    return withoutStackApproach(s);    
     }
 };
