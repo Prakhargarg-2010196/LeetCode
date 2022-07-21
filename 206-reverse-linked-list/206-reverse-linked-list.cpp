@@ -22,8 +22,17 @@ public:
         }
             
         return previousNode;
-//             Recursive Approach
-        
+//             Recursive Approach(https://leetcode.com/problems/reverse-linked-list/discuss/2105240/Reverse-Linked-List-oror-Easy-recursive-solution-with-image-explanation)
+        // ListNode*currentNode=head;
+        // ListNode*previous=NULL;
+        // if(currentNode!=NULL)
+        // {
+        //     reverseList(currentNode->next);
+        // }
+        // else{
+        //     currentNode->next=previousNode;
+        //     return previousNode;
+        // }
     
     
     
