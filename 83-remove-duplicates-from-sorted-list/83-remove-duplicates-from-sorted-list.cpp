@@ -14,8 +14,11 @@ public:
         ListNode* current=head;
         while(current!=NULL&&current->next!=NULL)
         {   if(current->val==current->next->val)
-                  current->next=current->next->next;
-           else
+            {   ListNode* temp=current->next;  
+                current->next=current->next->next;
+                delete temp;    
+            }
+            else
             current=current->next;
                                     
                  
