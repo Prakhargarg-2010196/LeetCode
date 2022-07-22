@@ -21,29 +21,20 @@ public:
         }
         return previous;
     }
+    
     bool isPalindrome(ListNode* head) {
-        vector<int>copy;
+        vector<int>nonReversed;
         ListNode* currentHead=head;
-        while(head!=NULL)
-        {    copy.push_back(head->val);
-             head=head->next;   
+        while(currentHead!=NULL)
+        {    nonReversed.push_back(currentHead->val);
+             currentHead=currentHead->next;   
         }
-        // for(auto it:copy)
-        // {   cout<<it<<" ";   
-        // }cout<<endl;
-        ListNode* notReversedHead=currentHead;
-        ListNode* reversedHead=reverse(notReversedHead);
         
-//         cout<<"reversed"<<endl;
-//         while(reversedHead!=NULL)
-//         {    cout<<reversedHead->val<<" ";
-//              reversedHead=reversedHead->next;
-//          }cout<<endl;
-        
+        ListNode* reversedHead=reverse(head);
         int i=0;
         while(reversedHead!=NULL)
         {   
-            if(reversedHead->val!=copy.at(i))
+            if(reversedHead->val!=nonReversed.at(i))
             {  
                 return false;
             }
@@ -52,4 +43,5 @@ public:
         }
         return true;
     }
+       
 };
