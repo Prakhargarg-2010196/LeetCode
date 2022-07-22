@@ -15,7 +15,7 @@ public:
         while(current!=NULL&&current->next!=NULL)
         {   if(current->val==current->next->val)
             {   ListNode* temp=current->next;  
-                current->next=current->next->next;
+                current->next=temp->next;                
                 delete temp;    
             }
             else
