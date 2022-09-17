@@ -42,8 +42,7 @@ public:
         ListNode* secondHalf=reverseList(middle);
         int maxSum=0;
         while(firstHalf!=NULL&&secondHalf!=NULL){
-                maxSum=(firstHalf->val+secondHalf->val)>maxSum?firstHalf->val+secondHalf->val:maxSum;
-            cout<<maxSum<<endl;
+            maxSum=max(maxSum,firstHalf->val+secondHalf->val);// to find max 
             firstHalf=firstHalf->next;
             secondHalf=secondHalf->next;
                 
