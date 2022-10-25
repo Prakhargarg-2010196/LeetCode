@@ -2,6 +2,8 @@ class Solution {
 public:
     bool isAnagram(string s, string t) {
         //Noob Approach
+        if(s.size()!=t.size())
+            return false;
         array<int,26> countS;//std::array
         countS.fill(0);
         array<int,26> countT;//std::array
