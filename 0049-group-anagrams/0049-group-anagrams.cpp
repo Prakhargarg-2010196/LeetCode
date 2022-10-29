@@ -27,7 +27,7 @@ public:
         string str;
         for(auto& it:countChar)
         {   
-             str+=it+'0';
+             str+=it+'0';//
           
          }
         cout<<str<< " ";
