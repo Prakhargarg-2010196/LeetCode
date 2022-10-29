@@ -25,9 +25,9 @@ public:
         for(auto it:s)
             countChar[it-'a']++;//it-'a' will subtract the ascii value of both and give the ascii value in return;
         string str;
-        for(int i=0;i<countChar.size();i++)
+        for(auto& it:countChar)
         {   
-             str+=to_string(countChar[i]+'a');
+             str+=it+'a';
           
          }
         cout<<str<< " ";
