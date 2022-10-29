@@ -15,7 +15,7 @@ public:
         }
         
         return anagrams;
-        // SECOND APPROACH
+      
         
         
     }
@@ -25,8 +25,9 @@ public:
         for(auto it:s)
             countChar[it-'a']++;//it-'a' will subtract the ascii value of both and give the ascii value in return;
         string str;
-        for(auto it:countChar)
-        { str+=it+'a';
+        for(auto& it:countChar)
+        {   
+            str+=it+'a';
           
          }
         cout<<str<< " ";
