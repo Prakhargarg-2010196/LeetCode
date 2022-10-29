@@ -5,8 +5,10 @@ public:
         unordered_map<string,vector<string>> mp;
         for(auto& it:strs){
             string t=it;
-            // sort(t.begin(),t.end());//sorting the key 
-            mp[sortString(t)].push_back(it);//storing the value with same keys together
+            sort(t.begin(),t.end());//sorting the key 
+            mp[t].push_back(it);//storing the value with same keys together
+            
+            // mp[sortString(t)].push_back(it);//storing the value with same keys together
         }
         // saving the results in the anagrams vector
         vector<vector<string>> anagrams;
@@ -30,7 +32,7 @@ public:
              str+=it+'0';//convert the count to string
           
          }
-        cout<<str<< " ";
+        // cout<<str<< " "; // to see that the value of the string so formed
         return str;
     }
 };
