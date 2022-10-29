@@ -22,12 +22,12 @@ public:
     private: 
     string sortString(string &s){
         vector<int> countChar(26,0);
-        for(auto it:s)
+        for(auto& it:s)
             countChar[it-'a']++;//it-'a' will subtract the ascii value of both and give the ascii value in return;
         string str;
         for(auto& it:countChar)
         {   
-             str+=it+'0';//
+             str+=it+'0';//convert the count to string
           
          }
         cout<<str<< " ";
