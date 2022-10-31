@@ -10,7 +10,7 @@ class Solution {
             count[it]++;
         }
         vector<pair<int,int>>kFrequentPairs;
-        for(auto& it:count){
+        for(auto it:count){
             kFrequentPairs.push_back(make_pair(it.first,it.second));
         }
         // sorted pairs using comparator function        
