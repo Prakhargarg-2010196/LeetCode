@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
-        string str,rev;
+        string str;
         for(auto&it:s)
             it=('A'<=it&&it<='Z')?it+32:it;
                
@@ -10,10 +10,12 @@ public:
                 str+=it;
             }
         }
-        for(auto it=str.rbegin();it!=str.rend();it++)
-            rev+=*it;
-        if(str==rev)
-            return true;
-    return false;    
+        for(int i=0,j=str.size()-1;i<str.size();i++,j--){
+            if(str[i]!=str[j])
+                return false;
+            
+        }
+        
+    return true;    
     }
 };
