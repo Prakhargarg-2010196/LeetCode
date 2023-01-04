@@ -4,8 +4,8 @@ public:
         //first approach
        
           /* 
-            (i+k)%n here gives the index after removing the no.of replicated rotations made we could have used i+k instead of i+k but then for example
-            k=7 and n=7 conditions were met then futile transactions would be made.
+            (i+k)%n here i+k gives the index where element has to be placed after rotation but in certain case where k>=n then the element might move out of the array so to get back the index of the array where the element has to be placed remainder is calculated.
+            k=7 and n=7  , if i=0 then after i+k=7 and 7 index does not lie in array and have to be found a position so the correct position is found by remainder as it gives the remainder of the index after k rotations are made 
         
         */
 //         int n=nums.size();
@@ -15,8 +15,8 @@ public:
 //         int i=0;
        
 //         while(i<n){
-//             nums[(i+k)]=temp[i];
-       
+//             nums[(i+k)%n]=temp[i];
+                
 //             i++;
 //         }
         
