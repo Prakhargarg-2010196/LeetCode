@@ -6,7 +6,7 @@ public:
         }
         else return false;
         
-        // return a%2==0&&b%2!=0;
+        // return a%2==0&&b%2!=0;// this is my solution 
         
                     
     }
