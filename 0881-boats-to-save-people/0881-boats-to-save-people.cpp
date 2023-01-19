@@ -6,12 +6,16 @@ public:
         int i=0,j=n-1,count=0;
         while(i<=j){
             int tw=people[i]+people[j];
-            count++;
             if(tw<=limit)
-            { i++;// increase the weight
-              // count++;   
+            {   count++;// count collective boats
+                i++;// add the light person
+                j--;// add the heavy person  
             }
-             j--;//decrease the weight
+            else{
+                count++;//count the removed person to a single boat
+                j--;// add heavy  person
+            }  
+            
             
                 
         }
