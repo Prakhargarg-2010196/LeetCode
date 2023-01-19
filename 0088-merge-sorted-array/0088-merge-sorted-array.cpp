@@ -1,7 +1,7 @@
 class Solution {
 public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
-        
+                  
         int ptr1=0,ptr2=0;
         vector<int>temp;
         while(ptr1<m||ptr2<n){
@@ -15,9 +15,7 @@ public:
                 ptr2++;
             }
         }
-        for(int i=0;i<m+n;i++){
-            nums1[i]=temp[i];
-        }
+        nums1=temp;
         
     }
 };
