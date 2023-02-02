@@ -9,7 +9,7 @@ public:
             int mid=L+(R-L)/2;// to avoid integer overflow
             if(A[mid]==target)
             {   if(mid==L||A[mid-1]!=A[mid])
-                {   // compare if the mid is at start or if previous element to mid element is equal to it or not
+                {   // compare if the mid is at start or if previous element to mid element is equal to it or not(this we are doing as there can be multiple same elements.)
                    ans[0]=mid;
                    break;
                 }      
@@ -30,7 +30,7 @@ public:
             int mid=L+(R-L)/2;// to avoid integer overflow
             if(A[mid]==target)
             {   if(mid==R||A[mid+1]!=A[mid])
-                {   // compare if the mid is at end or if next element to mid element is equal to it or not
+                {   // compare if the mid is at end or if next element to mid element is equal to it or not (this we are doing as there can be multiple same elements.)
                    ans[1]=mid;
                    break;
                 }      
