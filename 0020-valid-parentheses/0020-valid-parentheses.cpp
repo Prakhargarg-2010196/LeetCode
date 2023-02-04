@@ -6,11 +6,13 @@ public:
             if(it=='('||it=='{'||it=='[')
                 stk.push(it);
             else{
-                   if(!stk.empty()&&(it==')'&&stk.top()=='('||it=='}'&&stk.top()=='{'||it==']'&&stk.top()=='['))
-            {
+            if(!stk.empty()){
+                if(it==')'&&stk.top()=='('||
+                   it=='}'&&stk.top()=='{'||
+                   it==']'&&stk.top()=='[')
                 stk.pop();
-                
-            }
+                else return false;
+         }
             else return false;
             }       
         }
