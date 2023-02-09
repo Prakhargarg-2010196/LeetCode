@@ -10,7 +10,7 @@ public:
                     s.pop();
             }
             if(!s.empty()){
-                res[i]=s.top()-i;
+                res[i]=s.top()-i;// s.top() stores the index of the next greatest and the i is the index of the element whose greatest is to be found so s.top() > i;  as we are traversing array from right;
             }
             s.push(i);
         }
