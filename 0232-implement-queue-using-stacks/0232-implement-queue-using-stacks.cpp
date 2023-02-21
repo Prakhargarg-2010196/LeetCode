@@ -6,33 +6,63 @@ public:
     }
     
     void push(int x) {
+        // T:N S:N
         //transfer from s to rev
-        while(!s.empty()){
-            rev.push(s.top());
-            s.pop();
-        } 
-        // push the new element
+        // while(!s.empty()){
+        //     rev.push(s.top());
+        //     s.pop();
+        // } 
+        // // push the new element
+        // s.push(x);
+        // // reverse and then push to the main stack
+        // while(!rev.empty()){
+        //     s.push(rev.top());
+        //     rev.pop();
+        // }
+        
+        // T:1(amortized),S:N
+        // the order during push does n't matter much
         s.push(x);
-        // reverse and then push to the main stack
-        while(!rev.empty()){
-            s.push(rev.top());
-            rev.pop();
-        }
         
     }
     
     int pop() {
-        int x=s.top();
-        s.pop();
+        // T:N,S:N
+        // int x=s.top();
+        // s.pop();
+        // return x;
+        
+        // T:1(amortized),S:N
+        // here rev stores the ordered stack that is queue so the top element represents the front of the queue
+        
+        int x=peek();        
+        rev.pop();
         return x;
     }
     
     int peek() {
-        return s.top();
+        // T:N,S:N
+        // return s.top();
+        
+        // T:1(amortized),S:N
+        // here rev stores the ordered stack that is queue so the top element represents the front of the queue
+        if(rev.empty()){
+            while(!s.empty()){
+                    rev.push(s.top());
+            s.pop();
+             }   
+            
+        }
+        return rev.top();
+        
     }
     
     bool empty() {
-        return s.empty();
+        // T:N,S:N
+        // return s.empty();
+        
+        // T:1(amortized),S:N
+        return s.empty()&&rev.empty();// both unordered and ordered should be empty
     }
 };
 
