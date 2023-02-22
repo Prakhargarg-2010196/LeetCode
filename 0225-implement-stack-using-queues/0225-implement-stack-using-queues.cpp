@@ -1,24 +1,61 @@
 class MyStack {
 public:
-    queue<int>q,rev;
     MyStack() {
         
     }
     /*Using two queues one to store the  element and nother to reverse its current order and then push back to the main queue*/
-    void push(int x) {
-        // transfer the data in rev to get reverse order
-           while(!q.empty()){
-                rev.push(q.front());
-                q.pop();
-            }
+    // queue<int>q,rev;
+    
+//     void push(int x) {
+//         // transfer the data in rev to get reverse order
+//            while(!q.empty()){
+//                 rev.push(q.front());
+//                 q.pop();
+//             }
        
-       // push the new data to the  queue     
-       q.push(x);
+//        // push the new data to the  queue     
+//        q.push(x);
+//         // store the data back to the main queue
+//         while(!rev.empty()){
+//             q.push(rev.front());
+//             rev.pop();
+//         }
+//     }
+    
+//     int pop() {
+//         int x=q.front();
+//         q.pop();
+//         return x;
+    
+//     }
+    
+//     int top() {
+//         return q.front();
+//     }
+    
+//     bool empty() {
+//         return q.empty()&&rev.empty();
+//     }
+
+    
+    //T:N ,S:N 
+    queue<int>q;
+     int count=0;// stores the global count of pushed elements
+    void push(int x) {
+       
+        // push the element to the queue 
+        q.push(x);
+        ++count;
         
-        while(!rev.empty()){
-            q.push(rev.front());
-            rev.pop();
-        }
+        // to reverse the elements first remove n-1 elements from the front and then push them at back of the queue
+        int k=count;
+        while(k>1){
+            
+            q.push(q.front());
+            q.pop();
+            k--;
+        } 
+        
     }
     
     int pop() {
@@ -33,7 +70,7 @@ public:
     }
     
     bool empty() {
-        return q.empty()&&rev.empty();
+        return q.empty();
     }
 };
 
