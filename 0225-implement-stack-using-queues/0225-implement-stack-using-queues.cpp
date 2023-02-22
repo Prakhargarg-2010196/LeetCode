@@ -40,15 +40,13 @@ public:
     
     //T:N ,S:N 
     queue<int>q;
-     int count=0;// stores the global count of pushed elements
     void push(int x) {
        
         // push the element to the queue 
         q.push(x);
-        ++count;
         
         // to reverse the elements first remove n-1 elements from the front and then push them at back of the queue
-        int k=count;
+        int k=q.size();// stores current size of the queue
         while(k>1){
             
             q.push(q.front());
