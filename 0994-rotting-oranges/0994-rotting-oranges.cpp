@@ -1,6 +1,8 @@
 class Solution {
 public:
     int orangesRotting(vector<vector<int>>& grid) {
+//         Follow-up:
+//         reduce the space-complexity: make changes in grid itself and use a queue to store the rotten ones.
         int m=grid.size();
         int n=grid[0].size();
         // storing rotten oranges
@@ -41,6 +43,8 @@ public:
                   
                 }
               if(!q.empty()){
+                  // when at the last stage when all the oranges that could become 
+                  // rotten have become rotten we have to only increase time when there are more rotten ones in the queue otherwise no use
                         ans++;
              }
         }
