@@ -37,15 +37,17 @@ public:
             cnt++;
             current=current->next;
         }
-        // for translations we take a new pointer as the before head has to be returned.
+        // for translations we take a new pointer 
         ListNode* temp=beforeHead;
         // doing l-n translations from before the head to reach l-nth node
         while(current!=NULL&&current->next!=NULL){
             temp=temp->next;
             current=current->next;
         }
-        // removing the node
-        temp->next=temp->next->next;
+        // removing the node(l-n+1 node has to be removed)
+        ListNode* deleteThisNode=temp->next;// store it
+        temp->next=temp->next->next;// move the pointers
+        delete deleteThisNode;// delete it
         return beforeHead->next;
         
     }
