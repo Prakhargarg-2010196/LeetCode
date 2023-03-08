@@ -9,6 +9,8 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
+        // whole logic of moving fast more is that fast would eventually reach the slow and if there was no cycle it would become null instead of meeting the slow 
+        // instead of two steps we could have moved the pointer with different ratio for speeds but experimentally we would get more optimised results with two steps for fast and one step for slow.
         ListNode* slow=head;
         ListNode* fast=head;
         while(fast&&fast->next){
