@@ -57,12 +57,13 @@ public:
             while(tr1!=tr2){
             
            // move until they meet 
-           
+           // when tr1 becomes null add distance of list 2 ie. headB
             if(!tr1){
                 tr1=headB;
             }
             else 
                 tr1=tr1->next;
+           // when tr2 becomes null add distance of list 1 ie. headA    
             if(!tr2){
                 tr2=headA;
             }
