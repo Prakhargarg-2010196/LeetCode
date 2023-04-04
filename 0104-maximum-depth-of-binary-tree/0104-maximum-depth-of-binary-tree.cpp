@@ -11,20 +11,30 @@
  */
 class Solution {
 public:
-    
-    int helper(TreeNode*root,int count){
-        if(root==NULL)
-            return count;
+    //recursive solution
+//     int helper(TreeNode*root,int count){
+//         if(root==NULL)
+//             return count;
+//         // stack stores different values for left and right subtree counts each time 
+//             count++;
+//             return  max(helper(root->left,count),helper(root->right,count));
         
-            count++;
-            return  max(helper(root->left,count),helper(root->right,count));
-        
-        
-    }
+//     }
+//     int maxDepth(TreeNode* root) {
+//         if(root==NULL)
+//             return 0;
+//         int count=1;// root node count
+//         // run on both subtrees
+//         return max(helper(root->left,count),helper(root->right,count));
+//     }
+
+    // shorter solution
     int maxDepth(TreeNode* root) {
         if(root==NULL)
             return 0;
-        int count=1;
-        return max(helper(root->left,count),helper(root->right,count));
+        int maxLeft=maxDepth(root->left);
+        int maxRight=maxDepth(root->right);
+        return max(maxLeft,maxRight)+1;
     }
+    
 };
