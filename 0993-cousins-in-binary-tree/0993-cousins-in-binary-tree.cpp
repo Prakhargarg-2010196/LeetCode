@@ -36,9 +36,15 @@ public:
         }
          
         TreeNode*leftSubtree=findParent(root->left,val);        
-         TreeNode*rightSubtree=findParent(root->right,val);
+        TreeNode*rightSubtree=findParent(root->right,val);
         if(leftSubtree==NULL)
+        {
+            // if the left subtree doesn't contains the parent it would become null so search in right subtree's result
             return rightSubtree;
+                            
+        }
+        // else if the right subtree becomes NULL i.e right Subtree doesn't contains the parent
+        // returning the leftSubtree's result
         return leftSubtree;
         
     }
@@ -49,8 +55,7 @@ public:
         int depthY=depth(root,0,y);
         TreeNode* parX=findParent(root,x);
         TreeNode* parY=findParent(root,y);
-        if(parX&&parY)
-        cout<<parX->val<<" "<<parY->val;
+        
         if(depthX==depthY&&parX!=parY)
             return true;
         return false;
